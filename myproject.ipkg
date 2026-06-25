@@ -1,0 +1,8 @@
+package myproject
+
+modules = Main,
+          Mylib.MyList,
+          Mylib.MyPar,
+          Mylib.MyCalc
+
+main = Main
