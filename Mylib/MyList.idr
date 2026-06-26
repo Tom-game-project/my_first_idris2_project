@@ -2,7 +2,9 @@ module Mylib.MyList
 
 import Data.Maybe
 
-public export
+%default total
+
+public export total
 data MyVect : Nat -> Type -> Type where
   Nil: MyVect Z a
   (::) : a -> (1 _ : MyVect k a) -> MyVect (S k) a
@@ -22,7 +24,7 @@ map f (x :: y) = f x :: map f y
 -- =========================================
 -- 「中身の型 a が Show を実装しているなら、MyVect も Show できる」という宣言 `Show => a`の部分
 -- 
-public export
+public export total
 Show a => Show (MyVect n a) where
   show Nil = "[]"
   show (x :: Nil) = "[" ++ show x ++ "]"
